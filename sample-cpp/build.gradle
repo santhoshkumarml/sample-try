@@ -1,0 +1,19 @@
+apply plugin: 'cpp'
+
+model {
+    components {
+        utility(NativeLibrarySpec)
+    }
+}
+
+model {
+    components {
+        main(NativeExecutableSpec) {
+            sources {
+                cpp {
+                    lib library: "utility"
+                }
+            }
+        }
+    }
+}
